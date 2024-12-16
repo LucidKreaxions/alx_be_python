@@ -1,4 +1,4 @@
-# Compact Version:
+# Compact/Cleaner Version:
 # Weather recommendation program
 
 # Constants for weather types
