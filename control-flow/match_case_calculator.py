@@ -1,27 +1,31 @@
-# A simple calculator
+# A simple calculator for practicing match-case
 
-# Prompt the user for the input
-num1 = int(input("Enter the first number: "))
-num2 = int(input("Enter the second number: "))
-sign = input("Choose the operation (+, -, *, /): ")
+def main():
+    # Prompt for user input
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    operation = input("Choose the operation (+, -, *, /): ")
 
-def calculate(num1, num2, sign):
-    if sign == '+':
-        return num1 + num2
-    elif sign == '-':
-        return num1 - num2
-    elif sign == '*':
-        return num1 * num2
-    elif sign == '/':
-        if num2 != 0:
-            return num1 / num2
-        else:
-            return "Error: Division by zero"
-    else:
-        return "Invalid operand"
+    # Perform the calculation using match-case
+    match operation:
+        case '+':
+            result = num1 + num2
+            print(f"The result is {result}.")
+        case '-':
+            result = num1 - num2
+            print(f"The result is {result}.")
+        case '*':
+            result = num1 * num2
+            print(f"The result is {result}.")
+        case '/':
+            if num2 == 0:
+                print("Cannot divide by zero.")
+            else:
+                result = num1 / num2
+                print(f"The result is {result}.")
+        case _:
+            print("Invalid operation. Please choose +, -, *, or /.")
 
-# Call the function and print the result
-result = calculate(num1, num2, sign)
-print(result)
-
+if __name__ == "__main__":
+    main()
 
