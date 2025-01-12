@@ -4,12 +4,15 @@ from datetime import datetime, timedelta
 def display_current_datetime():
     """Display the current date and time."""
     current_date = datetime.now()
-    print(f"Current date and time: {current_date}")
+    # Format the current date and time as "YYYY-MM-DD HH:MM:SS"
+    formatted_date = current_date.strftime("%Y-%m-%d %H:%M:%S")
+    print(f"Current date and time: {formatted_date}")
 
 def calculate_future_date(days):
     """Calculate a future date given a number of days to add."""
     current_date = datetime.now()
     future_date = current_date + timedelta(days=days)
+    # Return the future date in the format "YYYY-MM-DD"
     return future_date.strftime("%Y-%m-%d")
 
 def main():
